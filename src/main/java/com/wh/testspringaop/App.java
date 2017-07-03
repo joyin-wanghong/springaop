@@ -21,6 +21,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:META-INF/springmvc.xml");// 此文件放在SRC目录下
 
 		TestBean testbean = (TestBean)context.getBean("testbean");
+		
 		String result = testbean.outStr("param");
 		logger.info("结果:"+result);
 	}

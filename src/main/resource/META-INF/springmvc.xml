@@ -16,6 +16,9 @@
 	<aop:pointcut expression="execution(* com.wh..*(..))" id="advicepoint"/>
 	<aop:aspect ref="adviceaspect">
 		<aop:around method="excute" pointcut-ref="advicepoint"/>
+		<aop:before method="before" pointcut-ref="advicepoint" />
+		<aop:after-returning method="afterreturning" pointcut-ref="advicepoint" returning="returnvalue" />
+		<aop:after method="after" pointcut-ref="advicepoint" returning="returnvalue" />
 	</aop:aspect>
 </aop:config>
 
