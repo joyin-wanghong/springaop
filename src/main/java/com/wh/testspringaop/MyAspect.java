@@ -75,8 +75,8 @@ public class MyAspect implements Ordered {
 	 *@date 2017年7月3日 下午2:56:42 
 	 *@comment
 	 */
-	public void after(JoinPoint point,Object returnvalue){
-		logger.info("after:增强方法"+returnvalue);
+	public void after(JoinPoint point){
+		logger.info("after:增强方法");
 	}
 	
 
