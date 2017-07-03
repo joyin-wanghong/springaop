@@ -1,5 +1,7 @@
 package com.wh.testspringaop;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * aaaa
  */
 public class App {
+	public static Log logger = LogFactory.getLog(App.class);
 	public static void main(String[] args) {
 		// GenericXmlApplicationContext context = new
 		// GenericXmlApplicationContext();
@@ -18,7 +21,8 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:META-INF/springmvc.xml");// 此文件放在SRC目录下
 
 		TestBean testbean = (TestBean)context.getBean("testbean");
-		testbean.outStr("aa");
+		String result = testbean.outStr("param");
+		logger.info("结果:"+result);
 	}
 
 
